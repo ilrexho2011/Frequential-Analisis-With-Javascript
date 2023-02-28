@@ -1,0 +1,48 @@
+<!doctype>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Konvolucioni me Serite Fourier Sinjali katror</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <!--[if lte IE 8]>
+    <script language="javascript" type="text/javascript" src="js/lib/excanvas.min.js"></script><![endif]-->
+    <script type="text/javascript" src="js/lib/jquery.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.flot.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.flot.crosshair.js"></script>
+    <script type="text/javascript" src="js/plotValue.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+
+<div id="header">
+    <h2><span><a href="https://www.computerhouse.al">I. Rexho n&euml;</a></span><a
+            href="https://www.computerhouse.al">&nbsp;Konvolucioni me Serite Fourier</a></h2>
+</div>
+<div class="busy">
+    <div class="busyContext">
+        vizatimi ne zhvillim
+    </div>
+</div>
+<div id="content">
+    <div class="container">
+        <div id="placeholder" class="placeholder"></div>
+    </div>
+
+    <table class="table">
+        <tr>
+            <td><label for="amplitude">amplituda:</label></td>
+            <td><input id="amplitude" type="number" value="10" min="0"></td>
+            <td><label for="frequency">frekuenca:</label></td>
+            <td><input id="frequency" type="number" value="1" min="1"></td>
+            <td><label for="harmonic">harmonika:</label></td>
+            <td><input id="harmonic" type="number" value="5" min="1"></td>
+            <td><label for="sample">modeli:</label></td>
+            <td><input id="sample" type="number" value="360"></td>
+            <td><label for="details">detajet:</label></td>
+            <td><input id="details" type="checkbox" checked></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
