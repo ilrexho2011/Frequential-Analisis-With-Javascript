@@ -1,0 +1,11 @@
+html, body {
+
+}
+.grafiku{
+    margin: 10;
+    padding-left: 160px;
+}
+
+canvas {
+  display: block;
+}
