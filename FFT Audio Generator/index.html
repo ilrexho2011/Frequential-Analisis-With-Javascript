@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+<meta charset="utf-8">
+<title>Gjenerator Fourier me Audio Player</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+<script src="sketch.js" charset="utf-8"></script>
+<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<template id="slider-template">
+  <li>
+    <label>Rrezja:
+      <input type="range" class="radius" value="0" min="0" max="80" step="1">
+    </label>
+    <label>Inverto Fazen:
+      <input type="checkbox" class="phase">
+    </label>
+  </li>
+</template>
+
+<div id="container">
+  <label for="slider-count">Sa rrathe gjenerues doni?
+  <input type="number" id="slider-count" value="3" min="1"></label><br />
+  <div id="presets">
+    <button type="button" id="square-wave">Sinjali katror</button>
+    <button type="button" id="triangle-wave">Sinjali trekendor</button>
+    <button type="button" id="sawtooth-wave">Sinjali dhembesharre</button>
+    <button type="button" id="smooth-saw">Dhembesharre i lemuar</button>
+  </div>
+  <br /><label for="volume-slider">Kontrolli i Volumit:</label>
+  <input type="range" id="volume-slider" value="0.5" min="0" max="1" step="any">
+  <ol id="sliders"></ol>
+</div>
+
+<div id="piano">
+  <div id="ebony"></div>
+  <div id="ivory"></div>
+</div>
+
+</body>
+
+</html>
