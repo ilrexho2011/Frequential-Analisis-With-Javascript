@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <style> body {padding: 0; margin: 0;} </style>
+    <!-- <script src="./addons/CCapture.all.min.js"></script> -->
+    <script src="./addons/p5.min.js"></script>
+    <script src="./addons/p5.dom.min.js"></script>
+    <style>
+      .parent{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      .controls{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 2fr;
+        grid-auto-rows: 1fr;
+        grid-gap: 20px 5px;
+        margin: 5px;
+      }
+      .color_options{
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        justify-self: center;
+      }
+      .terms{
+        align-self: center;
+      }
+      .number_of_terms{
+        text-align: center;
+        font: 1.2rem 'Roboto', sans-serif;
+      }
+      .choices{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #presets{
+        width: 80%;
+      }
+      #Series{
+        grid-column: 1/4;
+        display: flex;
+        flex-direction: column;
+      }
+      #Series > .entry > input{
+        font: 1.2rem 'Roboto', sans-serif;
+      }
+      #Series > .entry{
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .form{
+        width: 10%;
+      }
+      label {
+        font: 1rem 'Roboto', sans-serif;
+      }
+      h1{
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+      }
+      #submit {
+          width: 200px;
+          height:40px;
+          background-color: lightgreen;
+          border-radius: 15px;
+          font-size:20px;
+      }
+      .p1{
+         font-size:18px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <h2>Vizualizimi i Sinjaleve gjeneruar me ane te Serive Fourier</h2>
+      <div id="sketch-holder"></div>
+      <div class="controls">
+        <!-- Kontrollimi i ngjyrimeve -->
+        <div class="color_options">
+          <div class="color_box">
+            <input type="color" name="background" id="canvas_background" value="#dadada">
+            <label for="background">Ngjyra e Sfondit</label>
+          </div>
+          <div class="color_box">
+            <input type="color" name="lines" id="canvas_lines" value="#ff4047">
+            <label for="lines">Ngjyra e Vijes</label>
+          </div>
+          <div class="color_box">
+              <input type="color" name="small_circles" id="canvas_circles"  value="#4200ff">
+              <label for="small_circles">Ngjyra e Rratheve</label>
+          </div>
+        </div>
+        <!-- Perzgjedhesit e numrit te termave -->
+        <div class="terms">
+          <p class="number_of_terms"></p>
+          <div id="slider"></div>
+        </div>
+        <!-- Perzgjedhesit e llojit te sinjalit -->
+        <div class="choices">
+          <p class="p1">Zgjidhni formen e sinjalit</p>
+          <select id="presets">
+              <option value="square">  Kuadratik     </option>
+              <option value="sawtooth">Dhembe sharre </option>
+              <option value="triangle">Triangular    </option>
+              <option value="clausen"> Seria Klausen </option>
+              <option value="custom">  Sipas deshires</option>
+          </select>
+        </div>
+        <!-- Seksioni i rregullimit manual te parametrave valor -->
+        <form id="Series">
+            <div class="entry"><label for="numerator">  Numeruesi: </label><input type="text" name="numerator" id="numerator" class="form" value="4">
+            <label for="denomenator">Emeruesi: &nbsp;&nbsp;</label><input type="text" name="denomenator" id="denomenator" class="form" value="PI * ((2*n) + 1)">
+            <label for="coefficient">Koeficienti: &nbsp;</label><input type="text" name="coefficient" id="coefficient" class="form" value="((2*n) + 1)">
+            <label for="series_1">  Termi fillestar 1 (0 nese joaktiv) </label><input type="checkbox" name="series_1" id="series_1" ></div>
+            <div class=""><input id="submit" type="button" value="Perditeso Sinjalin"></div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="sketch.js"></script>
+</html>
